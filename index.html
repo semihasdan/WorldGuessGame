@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Guess Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <div class="score-info">
+                <span>Round: <span id="current-round">1</span>/5</span>
+                <span>Total Score: <span id="total-score">0</span></span>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div id="street-view"></div>
+            <div id="guess-map"></div>
+        </div>
+
+        <div class="controls">
+            <button id="make-guess" class="btn">Submit Guess</button>
+            <button id="next-round" class="btn" style="display: none;">Next Round</button>
+        </div>
+
+        <div id="round-result" class="result-panel" style="color: white;">
+            <h2>Round Result</h2>
+            <p>Distance: <span id="distance">0</span> km</p>
+            <p>Round Score: <span id="round-score">0</span></p>
+        </div>
+
+        <div id="game-over" class="result-panel" style="display: none;">
+            <h2>Game Over!</h2>
+            <p>Total Score: <span id="final-score">0</span></p>
+            <button id="play-again" class="btn">Play Again</button>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY"></script>
+    <script src="game.js"></script>
+</body>
+</html> 
