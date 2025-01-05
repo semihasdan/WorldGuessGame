@@ -122,7 +122,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-
-- Google Maps Platform for their excellent APIs
-- The open-source community for inspiration and tools 
+![image](https://github.com/user-attachments/assets/792ddd44-9ade-4712-894e-392701b9b2b3)
