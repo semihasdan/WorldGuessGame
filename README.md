@@ -12,32 +12,68 @@ World Guess is an interactive geographic guessing game using Google Maps and Str
 - **Scoring System**: Distance-based scoring (maximum 1000 points)
 - **5-Round Game**: Each game consists of 5 rounds
 
-## Setup
+## Prerequisites
 
-1. Clone the project:
-   ```bash
-   git clone [repo-url]
-   ```
+- Node.js (v14 or higher)
+- npm (Node Package Manager)
+- A Google Cloud Platform account
+- Google Maps API key
 
-2. Get a Google Maps API key:
-   - Go to [Google Cloud Console](https://console.cloud.google.com)
-   - Create a new project
-   - Enable Maps JavaScript API and Street View API
-   - Create an API key
+## Getting Started
 
-3. Add your API key:
-   - Replace `YOUR_API_KEY` in `index.html` with your actual API key:
-   ```html
-   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-   ```
+### 1. Clone the project:
+```bash
+git clone https://github.com/semihasdan/WorldGuessGame.git
+cd WorldGuessGame
+```
 
-4. Run using a web server:
-   ```bash
-   npx http-server
-   ```
-   or any other static file server.
+### 2. Install Dependencies:
+```bash
+npm install
+```
 
-5. Open your browser and navigate to `http://localhost:8080`
+### 3. Get a Google Maps API Key:
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com)
+2. Create a new project or select an existing one
+3. Enable the following APIs in "APIs & Services > Library":
+   - Maps JavaScript API
+   - Street View API
+4. Create credentials:
+   - Go to "APIs & Services > Credentials"
+   - Click "Create Credentials" > "API Key"
+   - Your new API key will be displayed
+5. (Recommended) Restrict the API key:
+   - In the credentials page, click on the newly created API key
+   - Under "Application restrictions", select "HTTP referrers"
+   - Add your domain (e.g., localhost for development)
+   - Under "API restrictions", select "Restrict key"
+   - Select the APIs you enabled (Maps JavaScript API and Street View API)
+   - Click "Save"
+
+### 4. Configure Environment Variables:
+
+1. Create a `.env` file in the root directory:
+```bash
+cp .env.example .env
+```
+
+2. Add your Google Maps API key to the `.env` file:
+```
+GOOGLE_MAPS_API_KEY=your_api_key_here
+```
+
+### 5. Run the Application:
+
+1. Start the development server:
+```bash
+npm start
+```
+
+2. Open your browser and navigate to:
+```
+http://localhost:3000
+```
 
 ## How to Play
 
@@ -48,24 +84,45 @@ World Guess is an interactive geographic guessing game using Google Maps and Str
 5. View the results and proceed to the next round
 6. After 5 rounds, see your total score
 
-## Scoring
+## Scoring System
 
 - Maximum 1000 points per round
 - Points are calculated based on the distance between your guess and the actual location
-- The further away your guess, the lower your score
-- Minimum score is 0 points
+- The closer your guess, the higher your score:
+  - Within 1 km: 1000 points
+  - Within 5 km: 800-999 points
+  - Within 10 km: 600-799 points
+  - Within 50 km: 400-599 points
+  - Within 100 km: 200-399 points
+  - Within 500 km: 100-199 points
+  - Within 1000 km: 1-99 points
+  - Over 1000 km: 0 points
 
 ## Technical Details
 
 - Built with HTML5, CSS3, and JavaScript
 - Google Maps JavaScript API and Street View API integration
 - Haversine formula for distance calculation
-- Responsive design
+- Responsive design for desktop and mobile devices
 
 ## Future Enhancements
 
-- Difficulty levels
+- Difficulty levels (Easy, Medium, Hard)
 - Multiplayer support
 - Global leaderboard
 - Custom location sets
-- Time limit option 
+- Time limit option
+- Achievement system
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Google Maps Platform for their excellent APIs
+- The open-source community for inspiration and tools 
