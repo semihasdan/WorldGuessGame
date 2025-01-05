@@ -1,3 +1,4 @@
+![image](https://github.com/user-attachments/assets/6682ba32-feac-448b-a2fc-334238ad5111)
 # World Guess Game
 
 ## Description
