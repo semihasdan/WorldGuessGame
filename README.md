@@ -1,126 +1,121 @@
-![image](https://github.com/user-attachments/assets/6682ba32-feac-448b-a2fc-334238ad5111)
-# World Guess Game
+# World Guess Game PRO 🌍
 
-## Description
+A fun and educational web-based geography game collection featuring three different game modes: Street View Guessing, Flag Guessing, and Country Finding.
 
-World Guess is an interactive geographic guessing game using Google Maps and Street View APIs. Players are placed at random locations and must try to guess their location using Street View. Guesses are made by clicking on the map, and points are awarded based on the proximity to the actual location.
+## 🎮 Game Modes
 
-## Features
+### 1. Street View Guessing Game
+- Get dropped in a random location using Google Street View
+- Look around and explore the environment
+- Make your guess by clicking on the world map
+- Score points based on how close your guess is to the actual location
+- Play 5 rounds and try to achieve the highest score
 
-- **Google Street View Integration**: Players can navigate through real-world imagery
-- **Interactive Map**: Make guesses by clicking on the map
-- **Visual Results**: After each guess, see the actual location, your guess, and the distance between them
-- **Scoring System**: Distance-based scoring (maximum 1000 points)
-- **5-Round Game**: Each game consists of 5 rounds
+### 2. Flag Guessing Game
+- Test your knowledge of world flags
+- Choose from 4 options for each flag shown
+- Complete 10 rounds
+- Instant feedback on correct and incorrect answers
+- Track your score as you play
 
-## Prerequisites
+### 3. Country Finding Game
+- Multiple region options:
+  - World
+  - Europe
+  - Africa
+  - Asia
+  - Americas
+  - US States
+- Find the requested country/state on the map
+- 10 rounds per game
+- Visual feedback for correct and incorrect answers
 
-- Node.js (v14 or higher)
-- npm (Node Package Manager)
-- A Google Cloud Platform account
-- Google Maps API key
+## 🚀 Features
 
-## Getting Started
+- Responsive design
+- Interactive maps using Google Maps API
+- Real-time scoring system
+- Beautiful UI with smooth animations
+- Easy navigation between games
+- Help modal with game instructions
+- Support for both satellite and roadmap views
+- Mobile-friendly interface
 
-### 1. Clone the project:
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Google Maps API
+- Google Street View API
+- REST Countries API
+- Font Awesome Icons
+
+## 🎯 Scoring System
+
+### Street View Game
+- Distance < 10km: 5000 points
+- Distance < 50km: 4000 points
+- Distance < 100km: 3000 points
+- Distance < 500km: 2000 points
+- Distance < 1000km: 1000 points
+- Distance < 2000km: 500 points
+- Distance > 2000km: 0 points
+
+### Flag & Country Finding Games
+- 1 point per correct answer
+- Final score displayed as X/10
+
+## 🔧 Installation & Setup
+
+1. Clone the repository:
 ```bash
-git clone https://github.com/semihasdan/WorldGuessGame.git
-cd WorldGuessGame
+git clone https://github.com/semihasdan/WorldGuessGamePRO.git
 ```
 
-### 2. Install Dependencies:
+2. Navigate to the project directory:
 ```bash
-npm install
+cd WorldGuessGamePRO
 ```
 
-### 3. Get a Google Maps API Key:
-
-1. Go to [Google Cloud Console](https://console.cloud.google.com)
-2. Create a new project or select an existing one
-3. Enable the following APIs in "APIs & Services > Library":
-   - Maps JavaScript API
-   - Street View API
-4. Create credentials:
-   - Go to "APIs & Services > Credentials"
-   - Click "Create Credentials" > "API Key"
-   - Your new API key will be displayed
-5. (Recommended) Restrict the API key:
-   - In the credentials page, click on the newly created API key
-   - Under "Application restrictions", select "HTTP referrers"
-   - Add your domain (e.g., localhost for development)
-   - Under "API restrictions", select "Restrict key"
-   - Select the APIs you enabled (Maps JavaScript API and Street View API)
-   - Click "Save"
-
-### 4. Configure Environment Variables:
-
-1. Create a `.env` file in the root directory:
-```bash
-cp .env.example .env
-```
-
-2. Add your Google Maps API key to the `.env` file:
+3. Create a `.env` file and add your Google Maps API key:
 ```
 GOOGLE_MAPS_API_KEY=your_api_key_here
 ```
 
-### 5. Run the Application:
+4. Open `index.html` in your web browser or use a local server.
 
-1. Start the development server:
-```bash
-npm start
-```
+## 📝 API Requirements
 
-2. Open your browser and navigate to:
-```
-http://localhost:3000
-```
+- Google Maps API key with the following APIs enabled:
+  - Maps JavaScript API
+  - Street View API
+  - Geocoding API
 
-## How to Play
+## 🌟 Future Improvements
 
-1. When the game starts, you'll be placed at a random Street View location
-2. Explore the surroundings using Street View
-3. When you think you know where you are, click that location on the map
-4. Click "Submit Guess" to see your results
-5. View the results and proceed to the next round
-6. After 5 rounds, see your total score
+- Add more game modes
+- Implement user accounts and high scores
+- Add multiplayer support
+- Include difficulty levels
+- Add more detailed statistics
+- Implement a practice mode
+- Add sound effects and background music
 
-## Scoring System
-
-- Maximum 1000 points per round
-- Points are calculated based on the distance between your guess and the actual location
-- The closer your guess, the higher your score:
-  - Within 1 km: 1000 points
-  - Within 5 km: 800-999 points
-  - Within 10 km: 600-799 points
-  - Within 50 km: 400-599 points
-  - Within 100 km: 200-399 points
-  - Within 500 km: 100-199 points
-  - Within 1000 km: 1-99 points
-  - Over 1000 km: 0 points
-
-## Technical Details
-
-- Built with HTML5, CSS3, and JavaScript
-- Google Maps JavaScript API and Street View API integration
-- Haversine formula for distance calculation
-- Responsive design for desktop and mobile devices
-
-## Future Enhancements
-
-- Difficulty levels (Easy, Medium, Hard)
-- Multiplayer support
-- Global leaderboard
-- Custom location sets
-- Time limit option
-- Achievement system
-
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-![image](https://github.com/user-attachments/assets/792ddd44-9ade-4712-894e-392701b9b2b3)
+## 👨‍💻 Author
+
+Semih AŞDAN - [GitHub Profile](https://github.com/semihasdan)
+
+## 🙏 Acknowledgments
+
+- [Google Maps Platform](https://developers.google.com/maps) for their excellent mapping services
+- [REST Countries API](https://restcountries.com/) for providing country data
+- [Font Awesome](https://fontawesome.com/) for the beautiful icons
