@@ -4,43 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Guess Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="game-container">
         <div class="header">
             <div class="score-info">
-                <span>Round: <span id="current-round">1</span>/5</span>
-                <span>Total Score: <span id="total-score">0</span></span>
+                <span><i class="fas fa-map-marker-alt"></i> Round: <span id="current-round">1</span>/5</span>
+                <span><i class="fas fa-star"></i> Score: <span id="total-score">0</span></span>
+                <a href="flag-game.html" class="nav-btn"><i class="fas fa-flag"></i> Flag Game</a>
+                <a href="map-game.html" class="nav-btn"><i class="fas fa-globe"></i> Country Finding</a>
+            </div>
+            <div class="game-controls">
+                <button id="toggle-map" class="btn btn-small"><i class="fas fa-map"></i></button>
+                <button id="help" class="btn btn-small"><i class="fas fa-question-circle"></i></button>
             </div>
         </div>
 
         <div class="game-area">
             <div id="street-view"></div>
-            <div id="guess-map"></div>
+            <div id="guess-map" class="map-small"></div>
         </div>
 
         <div class="controls">
-            <button id="make-guess" class="btn">Submit Guess</button>
-            <button id="next-round" class="btn" style="display: none;">Next Round</button>
+            <button id="make-guess" class="btn"><i class="fas fa-check"></i> Submit Guess</button>
+            <button id="next-round" class="btn" style="display: none;"><i class="fas fa-arrow-right"></i> Next Round</button>
         </div>
 
-        <div id="round-result" class="result-panel" style="color: white;">
-            <h2>Round Result</h2>
-            <p>Distance: <span id="distance">0</span> km</p>
-            <p>Round Score: <span id="round-score">0</span></p>
+        <div id="round-result" class="result-panel">
+            <h2><i class="fas fa-flag-checkered"></i> Round Result</h2>
+            <p><i class="fas fa-route"></i> Distance: <span id="distance">0</span> km</p>
+            <p><i class="fas fa-trophy"></i> Round Score: <span id="round-score">0</span></p>
+            <div id="result-map" class="result-map"></div>
         </div>
 
-        <div id="game-over" class="result-panel" style="display: none;">
-            <h2>Game Over!</h2>
+        <div id="game-over" class="result-panel">
+            <h2><i class="fas fa-medal"></i> Game Over!</h2>
             <p>Total Score: <span id="final-score">0</span></p>
-            <button id="play-again" class="btn">Play Again</button>
+            <button id="play-again" class="btn"><i class="fas fa-redo"></i> Play Again</button>
+        </div>
+
+        <div id="help-modal" class="modal">
+            <div class="modal-content">
+                <h2><i class="fas fa-info-circle"></i> How to Play</h2>
+                <ul>
+                    <li>Look around in Street View to figure out where you are</li>
+                    <li>Click on the map to place your guess</li>
+                    <li>Submit your guess to see how close you were</li>
+                    <li>Try to get the highest score possible!</li>
+                </ul>
+                <button class="btn close-modal"><i class="fas fa-times"></i> Close</button>
+            </div>
         </div>
     </div>
 
     <div class="overlay"></div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY"></script>
+    <!-- Load Google Maps API first -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_MAPS_API_KEY&libraries=places,geometry"></script>
+    
+    <!-- Then load our game script -->
     <script src="game.js"></script>
+    
+    <!-- Finally initialize the game -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                console.log('DOM loaded, initializing game...');
+                if (typeof google === 'undefined') {
+                    throw new Error('Google Maps not loaded');
+                }
+                if (typeof initGame === 'function') {
+                    initGame();
+                } else {
+                    throw new Error('Game initialization function not found');
+                }
+            } catch (error) {
+                console.error('Error during initialization:', error);
+                alert('Error initializing game. Please refresh the page and try again.');
+            }
+        });
+    </script>
 </body>
 </html> 
