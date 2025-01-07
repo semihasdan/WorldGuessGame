@@ -59,9 +59,9 @@ npm install
 cp .env.example .env
 ```
 
-2. Add your Google Maps API key to the `.env` file:
+2. Add your Google Maps API key to the `index.html` file:
 ```
-GOOGLE_MAPS_API_KEY=your_api_key_here
+<script src="https://maps.googleapis.com/maps/api/js?key=API_KEY"></script>
 ```
 
 ### 5. Run the Application:
