@@ -114,8 +114,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Semih AŞDAN - [GitHub Profile](https://github.com/semihasdan)
 
-## 🙏 Acknowledgments
+## Images
+![image](https://github.com/user-attachments/assets/a72f149a-51e8-4e6c-b11b-1dc9da61c326)
+![image](https://github.com/user-attachments/assets/907e1e51-77c3-42a9-8e96-c65b06892961)
+![Uploading image.png…]()
 
-- [Google Maps Platform](https://developers.google.com/maps) for their excellent mapping services
-- [REST Countries API](https://restcountries.com/) for providing country data
-- [Font Awesome](https://fontawesome.com/) for the beautiful icons
