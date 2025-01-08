@@ -115,7 +115,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Semih AŞDAN - [GitHub Profile](https://github.com/semihasdan)
 
 ## Images
-![image](https://github.com/user-attachments/assets/a72f149a-51e8-4e6c-b11b-1dc9da61c326)
+![image](https://github.com/user-attachments/assets/d342cfe7-c10c-4351-9a3b-bdba33c8f2dd)
 ![image](https://github.com/user-attachments/assets/907e1e51-77c3-42a9-8e96-c65b06892961)
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/dcc28ef6-6f32-438e-97e3-c1ee2ed83780)
 
